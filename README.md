@@ -5,10 +5,7 @@ Step 1: Install
 #Open New Terminal
 #Copy and paste command below
 
-pip install flask
-pip install pandas
-pip install scikit-learn
-pip install vaderSentiment
+pip install flask pandas scikit-learn vaderSentiment
 
 Step 2: Run code
 

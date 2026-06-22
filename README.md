@@ -14,7 +14,7 @@ Step 2: Run code
 
 python main.py
 
-Step 3: Display output
+Step 3: Run output
 
 #Open Google Chrome
 #Copy and paste link below

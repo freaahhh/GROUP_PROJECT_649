@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Cafe Review Analysis System</title>
+    <title>Kafféa: Customer Feedback Sentiment & Text Classification</title>
 
     <style>
         * {
@@ -13,7 +13,7 @@
         }
 
         body {
-            background: #f4f6f9;
+            background: #f5f0e6;
             padding: 40px;
         }
 
@@ -30,6 +30,14 @@
             margin-bottom: 30px;
         }
 
+        .title_body {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #4d2d0f;
+        }
+
         h2 {
             margin-bottom: 15px;
         }
@@ -43,18 +51,23 @@
         }
 
         button {
-            margin-top: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 10px;
+            margin-top: 10px;
+            padding: 10px 20px;
             cursor: pointer;
+            background-color: #8B5A2B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #6F4421;
         }
 
         .review-card {
-            background: #f8f8f8;
+            background: #f7f1d4;
+            border-left: 5px solid #8B5A2B;
             padding: 15px;
             border-radius: 10px;
             margin-top: 15px;
@@ -70,21 +83,21 @@
 
     <div class="container">
 
+        <h1 class="title_body"> Customer Feedback Sentiment & Text Classification</h1></br>
+
         <!-- CUSTOMER VIEW -->
 
         <div class="card">
 
-            <h2>Customer Feedback Submission (For Customer View)</h2>
+            <h2>Customer Feedback Form (For Customer View)</h2>
 
-            <form method="POST">
-
-                <textarea name="review" placeholder="Enter your review..." required>
-            </textarea>
+            <form method="POST" onsubmit="return validateReview()">
+                <textarea name="review" placeholder="Enter your review in English for better analysis accuracy"
+                    required></textarea>
 
                 <button type="submit">
                     Submit Review
                 </button>
-
             </form>
 
         </div>
@@ -125,3 +138,34 @@
 </body>
 
 </html>
+
+
+<!-- If Customer Submimt Wrong Format in The Form-->
+<script>
+    function validateReview() {
+
+        let review = document.querySelector("textarea[name='review']").value.trim();
+
+        let wordCount = review.split(/\s+/).length;
+
+        // empty check
+        if (review.length === 0) {
+            alert("Please enter a review.");
+            return false;
+        }
+
+        // too short check
+        if (wordCount < 3) {
+            alert("Please enter at least 3 words.");
+            return false;
+        }
+
+        // reject question patterns
+        if (review.includes("?")) {
+            alert("Please enter a customer review, not a question.");
+            return false;
+        }
+
+        return true; // allow submit
+    }
+</script>

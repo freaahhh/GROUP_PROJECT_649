@@ -5,7 +5,7 @@ Step 1: Install
 #Open New Terminal
 #Copy and paste command below
 
-pip install flask pandas scikit-learn vaderSentiment
+pip install flask pandas scikit-learn vaderSentiment deep-translator langdetect
 
 Step 2: Run code
 

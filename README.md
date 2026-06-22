@@ -12,7 +12,11 @@ Step 2: Run code
 #Open New Terminal
 #Copy and paste command below
 
+#for train dataset method
 python main.py
+
+#for predefined rules method
+python main2.py
 
 Step 3: Run output
 

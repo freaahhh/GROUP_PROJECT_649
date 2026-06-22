@@ -15,11 +15,14 @@ Step 2: Run code
 
 python main2.py
 
+Step 3: GUI
+
 #Open Google Chrome for GUI
 #Copy and paste link below
 
 http://127.0.0.1:5000/
 
+#-------FINISH---------
 
 
 
@@ -28,8 +31,6 @@ http://127.0.0.1:5000/
 
 
 
-
-!!!!!!!
 #Ignore below these
 
 #for data training method
